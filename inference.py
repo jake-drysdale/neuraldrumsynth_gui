@@ -113,7 +113,8 @@ def load_model():
                                py.join(output_dir, 'checkpoints'),
                                max_to_keep=5)
     try:  # restore checkpoint including the epoch counter
-        checkpoint.restore().assert_existing_objects_matched()
+        checkpoint.restore().expect_partial()
+        # .assert_existing_objects_matched()
     except Exception as e:
         print(e)
     
