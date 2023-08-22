@@ -119,7 +119,7 @@ def load_model():
     
     return G, S
 
-G, S = load_model()
+#G, S = load_model()
 
 def layer_noise(num):
     threshold = np.int32(np.random.uniform(0.0, 5, size = [num]))
@@ -139,18 +139,27 @@ def layer_noise(num):
 
 
 
-def generate_noise(condition):
+def generate_noise(condition, stylenet, noise):
     labels_save=np.array([condition])
     
     all_labels_save=[]
     for i in range(args.num_res-1):
         all_labels_save.append(labels_save)
     
-    n_save = layer_noise(1)
+    # n_save = layer_noise(1)
+    n_save = noise
     w_noise=[]
     for i in range(len(n_save)):
-        w_noise.append(S([n_save[i], all_labels_save[i]]))
+        w_noise.append(stylenet([n_save[i], all_labels_save[i]]))
     return w_noise
+
+
+def feature_slider(w, directions, component, amount):
+
+    w_hat = np.clip(w+(directions[component]*amount), 0,1000)
+
+    return w_hat
+
 
 
 @tf.function
@@ -166,8 +175,10 @@ def sample(G, styles):
     
     return G(styles + [ones, inc_noise], training=False)
 
+def load_models():
+    G, S = load_model()
+    return G, S
 
-def generate(cond):
-    latent = generate_noise(cond)
-    return sample(G,latent)[0]
-
+def generate(cond, generator, stylenet):
+    latent = generate_noise(cond, stylenet)
+    return sample(generator,latent)[0]
