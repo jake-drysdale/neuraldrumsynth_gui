@@ -4,6 +4,8 @@ GUI for controlling a drum sample generator.
 Please download the pre-trained model checkpoints from the following [link](https://drive.google.com/file/d/1YePxWx2zeJFqEOxOD9k15juVBPHh84bb/view?usp=drive_link).
 Unzip the folder and store it in the "output" folder.
 
+![nds_screenshot](https://github.com/jake-drysdale/neuraldrumsynth_gui/assets/48078777/066e86c0-f93d-427b-8405-732c4fd93396)
+
 This project utilsies a style-based generative adversarial network trained on collection of drum samples containing kick, snare, and cymbals.
 
 The GUI contains the following features:
