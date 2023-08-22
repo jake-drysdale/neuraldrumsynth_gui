@@ -6,7 +6,7 @@ Clone this repo locally and install the dependencies in requirements.txt in a ne
 Please download the pre-trained model checkpoints from the following [link](https://drive.google.com/file/d/1YePxWx2zeJFqEOxOD9k15juVBPHh84bb/view?usp=drive_link).
 Unzip the folder and store it in the "output" folder.
 
-Use python run_gui.py to using the synth GUI.
+Use python run_gui.py to begin using the generation GUI.
 
 ![nds_screenshot](./nds_screenshot.png)
 
