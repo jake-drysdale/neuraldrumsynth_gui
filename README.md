@@ -21,3 +21,4 @@ The GUI contains the following features:
 * __Blend Seed__: enables blending between the random seed and the UMAP space - _interpolates between the random latent vector and the UMAP vector_
 * __Play__: audio playback
 * __Save__: saves audio to the generations folder
+
