@@ -1,7 +1,7 @@
 # Neural Drum Synth GUI
 GUI for controlling a drum sample generator.
 
-Clone this repo locally and install the dependencies in requirements.txt in a new environment with Python 3.7.
+Clone this repo locally and install the dependencies in requirements.txt in a new environment with Python 3.6.10
 
 Please download the pre-trained model checkpoints from the following [link](https://drive.google.com/file/d/1YePxWx2zeJFqEOxOD9k15juVBPHh84bb/view?usp=drive_link).
 Unzip the folder and store it in the "output" folder.
